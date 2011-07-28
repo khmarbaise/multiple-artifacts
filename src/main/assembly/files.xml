@@ -1,0 +1,38 @@
+<component 
+  xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/component/1.1.2" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/component/1.1.2 http://maven.apache.org/xsd/component-1.1.2.xsd">
+
+  <fileSets>
+    <fileSet>
+      <outputDirectory>/</outputDirectory>
+      <directory>${project.build.outputDirectory}</directory>
+      <includes>
+        <include>**</include>
+      </includes>
+    </fileSet>
+    <!--  
+    The following is done to create the maven descriptors
+    into the jar file. This is usually done by using the following:
+    
+    <addMavenDescriptor>true</addMavenDescriptor> 
+    
+    But this seemed to be not working!
+
+     -->
+    <fileSet>
+      <outputDirectory>/META-INF/maven/${project.groupId}/${project.artifactId}/</outputDirectory>
+      <directory>${project.build.directory}/maven-archiver/</directory>
+      <includes>
+        <include>pom.properties</include>
+      </includes>
+    </fileSet>
+    <fileSet>
+      <outputDirectory>/META-INF/maven/${project.groupId}/${project.artifactId}/</outputDirectory>
+      <directory>${project.basedir}/</directory>
+      <includes>
+        <include>pom.xml</include>
+      </includes>
+    </fileSet>
+  </fileSets>  
+</component>

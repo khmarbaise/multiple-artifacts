@@ -21,14 +21,14 @@
 
      -->
     <fileSet>
-      <outputDirectory>/META-INF/maven/${project.groupId}/${project.artifactId}/</outputDirectory>
+      <outputDirectory>META-INF/maven/${project.groupId}/${project.artifactId}/</outputDirectory>
       <directory>${project.build.directory}/maven-archiver/</directory>
       <includes>
         <include>pom.properties</include>
       </includes>
     </fileSet>
     <fileSet>
-      <outputDirectory>/META-INF/maven/${project.groupId}/${project.artifactId}/</outputDirectory>
+      <outputDirectory>META-INF/maven/${project.groupId}/${project.artifactId}/</outputDirectory>
       <directory>${project.basedir}/</directory>
       <includes>
         <include>pom.xml</include>

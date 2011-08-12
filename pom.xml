@@ -103,7 +103,6 @@
                   <type>jar</type>
                 </artifactItem>
               </artifactItems>
-              <overWrite>false</overWrite>
               <outputDirectory>${project.build.directory}/server/c1</outputDirectory>
             </configuration>
           </execution>
@@ -120,10 +119,9 @@
                   <artifactId>junit</artifactId>
                   <version>4.2</version>
                   <type>jar</type>
-                  <overWrite>false</overWrite>
-                  <outputDirectory>${project.build.directory}/server/c2</outputDirectory>
                 </artifactItem>
               </artifactItems>
+              <outputDirectory>${project.build.directory}/server/c2</outputDirectory>
             </configuration>
           </execution>
           <execution>
@@ -139,10 +137,9 @@
                   <artifactId>junit</artifactId>
                   <version>4.3</version>
                   <type>jar</type>
-                  <overWrite>false</overWrite>
-                  <outputDirectory>${project.build.directory}/server/c3</outputDirectory>
                 </artifactItem>
               </artifactItems>
+              <outputDirectory>${project.build.directory}/server/c3</outputDirectory>
             </configuration>
           </execution>
         </executions>

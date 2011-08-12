@@ -186,6 +186,27 @@
           </execution>
         </executions>
       </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>wagon-maven-plugin</artifactId>
+        <version>1.0-beta-3</version>
+        <executions>
+          <execution>
+            <id>download-test-data</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>download-single</goal>
+            </goals>
+            <configuration>
+              <url>http://archive.apache.org/dist/abdera/1.1.2/</url>
+              <fromFile>apache-abdera-1.1.2-src.tar.gz</fromFile>
+              <toDir>${project.build.directory}/environment/qa</toDir>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
     </plugins>
   </build>
 

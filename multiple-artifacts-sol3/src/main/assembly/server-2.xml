@@ -21,5 +21,12 @@
         <include>**</include>
       </includes>
     </fileSet>
+	<fileSet>
+      <outputDirectory>WEB-INF</outputDirectory>
+      <directory>${project.build.directory}/server/c2</directory>
+      <includes>
+        <include>**</include>
+      </includes>
+	</fileSet>
   </fileSets>
 </assembly>

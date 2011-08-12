@@ -2,7 +2,7 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0 http://maven.apache.org/xsd/assembly-1.1.0.xsd">
 
-  <id>server1</id>
+  <id>qa</id>
   <formats>
     <format>war</format>
   </formats>
@@ -16,14 +16,14 @@
   <fileSets>
     <fileSet>
       <outputDirectory>WEB-INF</outputDirectory>
-      <directory>${basedir}/src/main/server/c1/</directory>
+      <directory>${basedir}/src/main/environment/qa/</directory>
       <includes>
         <include>**</include>
       </includes>
     </fileSet>
 	<fileSet>
       <outputDirectory>WEB-INF</outputDirectory>
-      <directory>${project.build.directory}/server/c1</directory>
+      <directory>${project.build.directory}/environment/qa</directory>
       <includes>
         <include>**</include>
       </includes>

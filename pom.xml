@@ -6,7 +6,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.soebes.maven.multiple.artifacts</groupId>
-  <artifactId>solution3</artifactId>
+  <artifactId>solution</artifactId>
   <version>0.1.0-SNAPSHOT</version>
   <packaging>war</packaging>
 
@@ -83,7 +83,7 @@
         <version>2.3</version>
         <executions>
           <execution>
-            <id>server1</id>
+            <id>test</id>
             <phase>prepare-package</phase>
             <goals>
               <goal>copy</goal>
@@ -103,11 +103,11 @@
                   <type>jar</type>
                 </artifactItem>
               </artifactItems>
-              <outputDirectory>${project.build.directory}/server/c1</outputDirectory>
+              <outputDirectory>${project.build.directory}/environment/test</outputDirectory>
             </configuration>
           </execution>
           <execution>
-            <id>server2</id>
+            <id>qa</id>
             <phase>prepare-package</phase>
             <goals>
               <goal>copy</goal>
@@ -121,11 +121,11 @@
                   <type>jar</type>
                 </artifactItem>
               </artifactItems>
-              <outputDirectory>${project.build.directory}/server/c2</outputDirectory>
+              <outputDirectory>${project.build.directory}/environment/qa</outputDirectory>
             </configuration>
           </execution>
           <execution>
-            <id>server3</id>
+            <id>production</id>
             <phase>prepare-package</phase>
             <goals>
               <goal>copy</goal>
@@ -139,7 +139,7 @@
                   <type>jar</type>
                 </artifactItem>
               </artifactItems>
-              <outputDirectory>${project.build.directory}/server/c3</outputDirectory>
+              <outputDirectory>${project.build.directory}/environment/production</outputDirectory>
             </configuration>
           </execution>
         </executions>
@@ -149,38 +149,38 @@
         <artifactId>maven-assembly-plugin</artifactId>
         <executions>
           <execution>
-            <id>server1</id>
+            <id>test</id>
             <phase>package</phase>
             <goals>
               <goal>single</goal>
             </goals>
             <configuration>
               <descriptors>
-                <descriptor>${project.basedir}/src/main/assembly/server-1.xml</descriptor>
+                <descriptor>${project.basedir}/src/main/assembly/test.xml</descriptor>
               </descriptors>
             </configuration>
           </execution>
           <execution>
-            <id>server2</id>
+            <id>qa</id>
             <phase>package</phase>
             <goals>
               <goal>single</goal>
             </goals>
             <configuration>
               <descriptors>
-                <descriptor>${project.basedir}/src/main/assembly/server-2.xml</descriptor>
+                <descriptor>${project.basedir}/src/main/assembly/qa.xml</descriptor>
               </descriptors>
             </configuration>
           </execution>
           <execution>
-            <id>server3</id>
+            <id>production</id>
             <phase>package</phase>
             <goals>
               <goal>single</goal>
             </goals>
             <configuration>
               <descriptors>
-                <descriptor>${project.basedir}/src/main/assembly/server-3.xml</descriptor>
+                <descriptor>${project.basedir}/src/main/assembly/production.xml</descriptor>
               </descriptors>
             </configuration>
           </execution>

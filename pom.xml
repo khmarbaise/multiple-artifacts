@@ -6,9 +6,9 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.soebes.maven.multiple.artifacts</groupId>
-  <artifactId>solution1</artifactId>
+  <artifactId>solution3</artifactId>
   <version>0.1.0-SNAPSHOT</version>
-  <packaging>jar</packaging>
+  <packaging>war</packaging>
 
   <name>build</name>
   <url>http://maven.apache.org</url>
@@ -51,10 +51,11 @@
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-assembly-plugin</artifactId>
-          <version>2.2.1</version>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>2.1.1</version>
           <configuration>
             <archive>
+              <addMavenDescriptor>true</addMavenDescriptor>
               <index>true</index>
               <manifest>
                 <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
@@ -68,9 +69,84 @@
             </archive>
           </configuration>
         </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-assembly-plugin</artifactId>
+          <version>2.2.1</version>
+        </plugin>
       </plugins>
     </pluginManagement>
     <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>2.3</version>
+        <executions>
+          <execution>
+            <id>server1</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>copy</goal>
+            </goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>junit</groupId>
+                  <artifactId>junit</artifactId>
+                  <version>4.1</version>
+                  <type>jar</type>
+                </artifactItem>
+                <artifactItem>
+                  <groupId>org.testng</groupId>
+                  <artifactId>testng</artifactId>
+                  <version>6.0.1</version>
+                  <type>jar</type>
+                </artifactItem>
+              </artifactItems>
+              <overWrite>false</overWrite>
+              <outputDirectory>${project.build.directory}/server/c1</outputDirectory>
+            </configuration>
+          </execution>
+          <execution>
+            <id>server2</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>copy</goal>
+            </goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>junit</groupId>
+                  <artifactId>junit</artifactId>
+                  <version>4.2</version>
+                  <type>jar</type>
+                  <overWrite>false</overWrite>
+                  <outputDirectory>${project.build.directory}/server/c2</outputDirectory>
+                </artifactItem>
+              </artifactItems>
+            </configuration>
+          </execution>
+          <execution>
+            <id>server3</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>copy</goal>
+            </goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>junit</groupId>
+                  <artifactId>junit</artifactId>
+                  <version>4.3</version>
+                  <type>jar</type>
+                  <overWrite>false</overWrite>
+                  <outputDirectory>${project.build.directory}/server/c3</outputDirectory>
+                </artifactItem>
+              </artifactItems>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-assembly-plugin</artifactId>
@@ -83,7 +159,7 @@
             </goals>
             <configuration>
               <descriptors>
-                <descriptor>${project.basedir}/src/main/assembly/server1.xml</descriptor>
+                <descriptor>${project.basedir}/src/main/assembly/server-1.xml</descriptor>
               </descriptors>
             </configuration>
           </execution>
@@ -95,7 +171,7 @@
             </goals>
             <configuration>
               <descriptors>
-                <descriptor>${project.basedir}/src/main/assembly/server2.xml</descriptor>
+                <descriptor>${project.basedir}/src/main/assembly/server-2.xml</descriptor>
               </descriptors>
             </configuration>
           </execution>
@@ -107,13 +183,12 @@
             </goals>
             <configuration>
               <descriptors>
-                <descriptor>${project.basedir}/src/main/assembly/server3.xml</descriptor>
+                <descriptor>${project.basedir}/src/main/assembly/server-3.xml</descriptor>
               </descriptors>
             </configuration>
           </execution>
         </executions>
       </plugin>
-
     </plugins>
   </build>
 

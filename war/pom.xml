@@ -5,17 +5,18 @@
 
   <modelVersion>4.0.0</modelVersion>
 
+  <parent>
+    <groupId>com.soebes.smpp</groupId>
+    <artifactId>smpp</artifactId>
+    <version>0.6</version>
+  </parent>
+
   <groupId>com.soebes.maven.multiple.artifacts</groupId>
   <artifactId>solution</artifactId>
   <version>0.1.0-SNAPSHOT</version>
   <packaging>war</packaging>
 
   <name>build</name>
-  <url>http://maven.apache.org</url>
-
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
 
   <dependencies>
     <dependency>
@@ -27,60 +28,10 @@
   </dependencies>
 
   <build>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-jar-plugin</artifactId>
-          <version>2.3.1</version>
-          <configuration>
-            <archive>
-              <addMavenDescriptor>true</addMavenDescriptor>
-              <index>true</index>
-              <manifest>
-                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-                <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
-              </manifest>
-              <manifestEntries>
-                <artifactId>${project.artifactId}</artifactId>
-                <groupId>${project.groupId}</groupId>
-                <version>${project.version}</version>
-              </manifestEntries>
-            </archive>
-          </configuration>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-war-plugin</artifactId>
-          <version>2.1.1</version>
-          <configuration>
-            <archive>
-              <addMavenDescriptor>true</addMavenDescriptor>
-              <index>true</index>
-              <manifest>
-                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-                <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
-              </manifest>
-              <manifestEntries>
-                <artifactId>${project.artifactId}</artifactId>
-                <groupId>${project.groupId}</groupId>
-                <version>${project.version}</version>
-              </manifestEntries>
-            </archive>
-          </configuration>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-assembly-plugin</artifactId>
-          <version>2.2.1</version>
-        </plugin>
-      </plugins>
-    </pluginManagement>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
-        <version>2.3</version>
         <executions>
           <execution>
             <id>test</id>
@@ -187,6 +138,7 @@
         </executions>
       </plugin>
 
+<!--
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>wagon-maven-plugin</artifactId>
@@ -206,7 +158,7 @@
           </execution>
         </executions>
       </plugin>
-
+-->
     </plugins>
   </build>
 

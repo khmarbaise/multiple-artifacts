@@ -10,7 +10,10 @@
   <dependencySets>
     <dependencySet>
       <unpack>true</unpack>
-      <useProjectArtifact>true</useProjectArtifact>
+      <useProjectArtifact>false</useProjectArtifact>
+      <includes>
+        <include>${project.groupId}:*:war:${project.version}</include>
+      </includes>
       <unpackOptions>
         <includes>
           <include>images/**</include>
@@ -18,15 +21,16 @@
       </unpackOptions>
     </dependencySet>
   </dependencySets>
-  <!--
-  <fileSets>
-    <fileSet>
-      <outputDirectory>images/</outputDirectory>
-      <directory>${basedir}/src/main/environment/test/</directory>
+  <moduleSets>
+    <moduleSet>
+      <useAllReactorProjects>true</useAllReactorProjects>
       <includes>
-        <include>**</include>
+        <include>${project.groupId}:*:ear:${project.version}</include>
       </includes>
-    </fileSet>
-  </fileSets>
-  -->
+      <binaries>
+        <outputDirectory>result</outputDirectory>
+        <unpack>false</unpack>
+      </binaries>
+    </moduleSet>
+  </moduleSets>
 </assembly>

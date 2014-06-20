@@ -11,9 +11,11 @@
     <dependencySet>
       <unpack>true</unpack>
       <useProjectArtifact>true</useProjectArtifact>
-      <includes>
-        <include>images/**</include>
-      </includes>
+      <unpackOptions>
+        <includes>
+          <include>images/**</include>
+        </includes>
+      </unpackOptions>
     </dependencySet>
   </dependencySets>
   <!--

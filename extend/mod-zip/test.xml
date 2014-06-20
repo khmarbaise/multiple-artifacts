@@ -4,29 +4,27 @@
 
   <id>test</id>
   <formats>
-    <format>war</format>
+    <format>zip</format>
   </formats>
   <includeBaseDirectory>false</includeBaseDirectory>
   <dependencySets>
     <dependencySet>
       <unpack>true</unpack>
       <useProjectArtifact>true</useProjectArtifact>
+      <includes>
+        <include>images/**</include>
+      </includes>
     </dependencySet>
   </dependencySets>
+  <!--
   <fileSets>
     <fileSet>
-      <outputDirectory>WEB-INF</outputDirectory>
+      <outputDirectory>images/</outputDirectory>
       <directory>${basedir}/src/main/environment/test/</directory>
       <includes>
         <include>**</include>
       </includes>
     </fileSet>
-	<fileSet>
-      <outputDirectory>WEB-INF</outputDirectory>
-      <directory>${project.build.directory}/environment/test</directory>
-      <includes>
-        <include>**</include>
-      </includes>
-	</fileSet>
   </fileSets>
+  -->
 </assembly>

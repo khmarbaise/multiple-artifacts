@@ -23,6 +23,7 @@
 
 
   <modules>
+    <module>mod-zip</module>
     <module>mod-war1</module>
     <module>mod-war2</module>
     <module>mod-war3</module>

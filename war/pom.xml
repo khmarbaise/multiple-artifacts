@@ -8,7 +8,7 @@
   <parent>
     <groupId>com.soebes.smpp</groupId>
     <artifactId>smpp</artifactId>
-    <version>0.6.2</version>
+    <version>1.2.0</version>
   </parent>
 
   <groupId>com.soebes.maven.multiple.artifacts</groupId>
@@ -108,29 +108,7 @@
             <configuration>
               <descriptors>
                 <descriptor>${project.basedir}/src/main/assembly/test.xml</descriptor>
-              </descriptors>
-            </configuration>
-          </execution>
-          <execution>
-            <id>qa</id>
-            <phase>package</phase>
-            <goals>
-              <goal>single</goal>
-            </goals>
-            <configuration>
-              <descriptors>
                 <descriptor>${project.basedir}/src/main/assembly/qa.xml</descriptor>
-              </descriptors>
-            </configuration>
-          </execution>
-          <execution>
-            <id>production</id>
-            <phase>package</phase>
-            <goals>
-              <goal>single</goal>
-            </goals>
-            <configuration>
-              <descriptors>
                 <descriptor>${project.basedir}/src/main/assembly/production.xml</descriptor>
               </descriptors>
             </configuration>

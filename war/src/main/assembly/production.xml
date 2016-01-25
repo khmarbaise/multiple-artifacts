@@ -17,16 +17,10 @@
     <fileSet>
       <outputDirectory>WEB-INF</outputDirectory>
       <directory>${basedir}/src/main/environment/production/</directory>
-      <includes>
-        <include>**</include>
-      </includes>
     </fileSet>
 	<fileSet>
       <outputDirectory>WEB-INF</outputDirectory>
       <directory>${project.build.directory}/environment/production</directory>
-      <includes>
-        <include>**</include>
-      </includes>
 	</fileSet>
   </fileSets>
 </assembly>

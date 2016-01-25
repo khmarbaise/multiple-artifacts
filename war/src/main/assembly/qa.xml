@@ -13,20 +13,27 @@
       <useProjectArtifact>true</useProjectArtifact>
     </dependencySet>
   </dependencySets>
+  <moduleSets>
+    <moduleSet>
+      <sources>
+        <fileSets>
+          <fileSet>
+            <outputDirectory>WEB-INF</outputDirectory>
+            <includes>
+              <include>src/main/environment/qa/**</include>
+            </includes>
+          </fileSet>
+        </fileSets>
+      </sources>
+    </moduleSet>
+  </moduleSets>
   <fileSets>
     <fileSet>
-      <outputDirectory>WEB-INF</outputDirectory>
-      <directory>${basedir}/src/main/environment/qa/</directory>
-      <includes>
-        <include>**</include>
-      </includes>
+        <outputDirectory>WEB-INF</outputDirectory>
+        <directory>${project.build.directory}/environment/qa</directory>
+        <includes>
+          <include>**</include>
+        </includes>
     </fileSet>
-	<fileSet>
-      <outputDirectory>WEB-INF</outputDirectory>
-      <directory>${project.build.directory}/environment/qa</directory>
-      <includes>
-        <include>**</include>
-      </includes>
-	</fileSet>
   </fileSets>
 </assembly>

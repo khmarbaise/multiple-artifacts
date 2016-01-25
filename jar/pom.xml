@@ -9,6 +9,7 @@
     <groupId>com.soebes.smpp</groupId>
     <artifactId>smpp</artifactId>
     <version>1.2.0</version>
+    <relativePath/>
   </parent>
 
   <groupId>com.soebes.maven.multiple.artifacts</groupId>

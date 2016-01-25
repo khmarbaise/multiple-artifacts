@@ -13,7 +13,7 @@
   </parent>
 
   <groupId>com.soebes.maven.multiple.artifacts</groupId>
-  <artifactId>extend</artifactId>
+  <artifactId>parent</artifactId>
   <version>1.0.4-SNAPSHOT</version>
   <packaging>pom</packaging>
 
